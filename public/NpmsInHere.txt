@@ -1,0 +1,6 @@
+For react-router
+npm i react-router-dom
+
+
+For contentful
+npm i contentful

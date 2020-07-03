@@ -1,0 +1,1372 @@
+//Start of Create React App instructions -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
+
+//For a beginner using npm (not yarn), I think I'd boil the "get up and running" information in the pages referenced below, to this:
+
++++++++++++++++++++++++++++++++++++++++++++++++
+
+//Creating an App: 
+//npx create-react-app my-app
+
++++++++++++++++++++++++++++++++++++++++++++++++
+
+//Once the installation is done, you can open your project folder:
+//cd my-app
+
++++++++++++++++++++++++++++++++++++++++++++++++
+
+Inside the newly created project, you can run some built-in commands:
+
+//npm start or yarn start
+//Runs the app in development mode.
+//Open http://localhost:3000 to view it in the browser.
+//THIS LOOKS LIKE SOME SORT OF ALTERNATIVE TO LIVESERVER
+
++++++++++++++++++++++++++++++++++++++++++++++++
+
+//npm test or yarn test
+//Runs the test watcher in an interactive mode. By default, runs tests related to files changed since the last commit.
+//I DON'T KNOW WHAT THIS MEANS (YET)
+
++++++++++++++++++++++++++++++++++++++++++++++++
+
+//npm run build or yarn build
+//Builds the app for production to the build folder. It correctly bundles React in production mode and optimizes the build for the best performance.
+//The build is minified and the filenames include the hashes.
+//Your app is ready to be deployed.
+
+===================================================================================================================================
+===================================================================================================================================
+===================================================================================================================================
+===================================================================================================================================
+===================================================================================================================================
+===================================================================================================================================
+//So here goes, this is what I did in my first attempt to get React up and running on my machine via Visual Studio Code
+
+1) Open command prompt, and type "cd " on command line, then drag relevant file into command prompt window, then press enter.
+I'm now in the correct directory, and my command like looks like this
+"C:\Users\Pete\Documents\Coding from 20200318 onwards\20200318 Work in progress\20200408 React App from scratch"
+
+2) On command line type 
+
+npx create-react-app your-app-name 
+
+(NB - Obviously, replace "your-app-name" above with something more descriptive and specific to your project. 
+Also, don't include any uppercase letters in your app name (this isn't allowed, and if you do the project generation will fail))
+
+and press enter
+
+Something is downloading !!!! Installing react, react-dom, babel etc. packages!!!!! 
+I also see "jest" "lodash" and "lint" modules loading?
+
+Also a message "initialised a git repository"
+Also my-app appears as a file in the folder!
+
+When it's done we get the following message:
+
+Created git commit.
+
+Success! Created my-app at C:\Users\Pete\Documents\Coding from 20200318 onwards\20200318 Work in progress\20200408 React App from scratch\my-app
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd my-app
+  npm start
+
+Happy hacking!
+
+C:\Users\Pete\Documents\Coding from 20200318 onwards\20200318 Work in progress\20200408 React App from scratch>
+
+3) I look in github, but do not see an additional repository. However, there is a .git folder in 
+C:\Users\Pete\Documents\Coding from 20200318 onwards\20200318 Work in progress\20200408 React App from scratch\my-app
+
+    To link the React work you've created on your machine with github, here are the steps you need to take:
+
+    3.1) Go into github and create a new repository that you're going to use to house your new work remotely on github. It's
+    a good idea to have the name match the filename you've used on yoru machine.
+
+    3.2) When you've created a new repository on github, then you need to link this repository with the local file on your 
+    machine. There are a number of ways to do this, in this case I'm going to use the method which is given to you when you create
+    the github repository (which is as follows).
+
+    3.3) Open GitBash on the local file on your machine, then use the command "git remote add origin" followed by the link 
+    supplied by github (which will look something like this "https://github.com/peter-lancaster/meme-generator-app.git"), and press
+    enter.
+
+    3.4) Check git status, and then use "git add ." and "git commit (if you need to)", and when you're ready, then use the command 
+    "git push -u origin master", and click enter.
+
+    3.5) Thats it. I think that future pushes will be fine with "git push origin master" (you won't need to include the "-u"). 
+    This view comes from here https://www.reddit.com/r/git/comments/3z43fa/in_the_command_git_push_u_origin_master_what_does/
+
+            "In the command "git push -u origin master", what does "-u" stand for?
+
+            Hi,
+
+            I apologize for this dumb question but I couldn't find the answer anywhere. What does "-u" do 
+            in "git push -u origin master"?
+            The command works just fine without using the -u flag. What is it's purpose? Also, where can 
+            I find the documentation for more flags like this? Thank you.
+            ·
+            4 years ago
+
+            "Upstream" is a reference that specifies which branch on which remote repository a local branch tracks. In effect, 
+            it represents a 'link' between the local and remote branches.
+
+            The command "git push -u origin master" sets the upstream of the current local branch, so that it tracks the master 
+            branch of the remote repository origin.
+
+            Typically, you only need to set the upstream once. Once it has been set, the "-u" is superfluous. Indeed, so is 
+            "origin master"; once you've set the upstream on the local branch, you can simply use "git push". The default 
+            target for push (and pull) is the upstream branch (unless you change the default settings).
+
+            Personally, whenever I create a new branch that I also want on a remote, the first command I run after checking 
+            out that new branch is "git push -u [remote name] [branch name]". Not only does that set the upstream for the 
+            branch, but if that branch name doesn't exist on the remote, Git creates it.
+
+
+4) Taking the suggestion above, I type on the command line "cd my-app", then enter. 
+
+This successfully changes directory to "C:\Users\Pete\Documents\Coding from 20200318 onwards\20200318 Work in progress\20200408 React App from scratch\my-app"
+
+now I type "npm start" and I get a liveserver type experience in the Chrome Browser, http://localhost:3000/ . 
+
+The command prompt is no longer calling itself "command prompt", instead the top of the command prompt window just says "npm". 
+
+5) It looks like the modules you need to be working on are held in "src/App.js"
+
+Thats all in this document for now - refer to README.md for further setup information.
+
+===================================================================================================================================
+===================================================================================================================================
+===================================================================================================================================
+===================================================================================================================================
+
+//This is where I got the instructions on how to create a React App. https://reactjs.org/docs/create-a-new-react-app.html 
+//You're looking for the "Create React App" section, about 1/3 of the way down the page: 
+
+Create React App
+
+Create React App is a comfortable environment for learning React, and is the best way to start building a new single-page application in React.
+
+It sets up your development environment so that you can use the latest JavaScript features, provides a nice developer experience, 
+and optimizes your app for production. You’ll need to have Node >= 8.10 and npm >= 5.6 on your machine. To create a project, run:
+
+npx create-react-app my-app
+cd my-app
+npm start
+Note
+
+npx on the first line is not a typo — it’s a package runner tool that comes with npm 5.2+.
+
+Create React App doesn’t handle backend logic or databases; it just creates a frontend build pipeline, so you can use it with 
+any backend you want. Under the hood, it uses Babel and webpack, but you don’t need to know anything about them.
+
+When you’re ready to deploy to production, running npm run build will create an optimized build of your app in the build folder. 
+You can learn more about Create React App from its README and the User Guide.
+
+================================================================================================================================
+//Also, further down the page, we have this : 
+
+Creating a Toolchain from Scratch
+A JavaScript build toolchain typically consists of:
+
+A package manager, such as Yarn or npm. It lets you take advantage of a vast ecosystem of third-party packages, 
+and easily install or update them.
+
+A bundler, such as webpack or Parcel. It lets you write modular code and bundle it together into small packages to optimize load time.
+
+A compiler such as Babel. It lets you write modern JavaScript code that still works in older browsers.
+
+If you prefer to set up your own JavaScript toolchain from scratch, check out this guide that re-creates some of the Create React App functionality.
+
+Don’t forget to ensure your custom toolchain is correctly set up for production.
+
+//So it looks like using React on new Apps used to be a convoluted process, and create-react-app is Facebooks answer to that.
+
+================================================================================================================================
+//These pages are also very useful: 
+
+https://create-react-app.dev/docs/getting-started
+
+https://github.com/facebook/create-react-app#create-react-app--
+
+//Start of Create React App instructions -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
+
+//Start of Deploy React App instructions -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
+This is taken from blog https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f/comments
+
+================================================================================
+
+1 - First create a repository named my-app using create-react-app.
+
+npm init react-app my-app
+
+PETE I SKIPPED THIS AS I'D ALREADY CREATED REPOSITORY AND LINKED TO WORK ON MY MACHINE.
+================================================================================
+
+2- We need to install GitHub Pages package as a dev-dependency.
+
+cd my-app
+npm install gh-pages --save-dev
+
+PETE I DID THIS
+
+================================================================================
+
+3- Add properties to package.json file.
+
+The first property we need to add at the top level homepage second we will define this 
+as a string and the value will be "http://{username}.github.io/{repo-name}" {username} is 
+your GitHub username, and {repo-name} is the name of the GitHub repository you 
+created it will look like this :
+
+"homepage": "http://yuribenjamin.github.io/my-app"
+
+PETE - I USED "homepage" : "https://peter-lancaster.github.io/react-speed-typing-game-20200608"
+
+
+Second in the existing scripts property we to need to add predeploy and deploy.
+
+"scripts": {
+//...
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build"
+}
+
+package.json example
+
+
+// WRONG https://peter-lancaster.github.io/contacts-list
+
+================================================================================
+
+4- Create a Github repository and initialize it and add it as a remote in your local git repository.
+
+Now, create a remote GitHub repository with your app name and go back initialize this
+git init
+add it as remote
+git remote add origin git@github.com:Yuribenjamin/my-app.git
+
+PETE I SKIPPED THIS AS I'D ALREADY CREATED REPOSITORY AND LINKED TO WORK ON MY MACHINE.
+HOWEVER, I DID GO INTO THE SETTINGS FOR MY REPOSITORY AND ACTIVATE GITHUB PAGES FOR THE 
+APPROPRIATE REPOSITORY 
+
+!!!!!ALSO BE AWARE THAT IN THE GITHUB PAGES SETTINGS SECTION, YOUR SOURCE NEEDS TO BE "gh-pages branch"
+AND NOT ANY OTHER BRANCH !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+================================================================================
+
+5- Now deploy it to GitHub Pages.
+
+just run the following command :
+
+npm run deploy
+
+successful build
+
+this command will create a branch named gh-pages this branch host your app, and homepage 
+property you created in package.json file hold your link for a live preview, or you can 
+open the branch setting scroll down to GitHub Pages section you will find this:
+Your site is puplished
+
+Visit deployed app
+
+================================================================================
+
+6- commit and push your commit to GitHub. Optionally
+
+git add .
+git commit -m "Your awesome message"
+git push origin master
+
+================================================================================
+
+Recap
+
+We created React App using create-react-app
+then we installed gh-pages as a dev-dependency
+and in package.json file we added some properties homepage also in existing scripts property we added predeploy and deploy
+and created a remote repository and initialize it
+and run npm run deploy to generate a production build and deploy it to GitHub Pages.
+
+if you have any questions, please don't hesitate to ask.
+Always happy to hear from you
+
+================================================================================
+
+questions and comments from the blog follow: 
+
+
+Very interesting tutorial Ibrahim!
+I have a question: how do you update the production build?
+I mean: after deploying the app on GitHub, I realized that I need to change some stuffs. So I have generated new commits. If my app points to the master branch, how can I reflect that new changes on the production build then?
+
+Thanks
+
+Favorite heart outline button 4
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorJun 10Dropdown menu
+Make changes commit then deploy again, that's it
+
+Favorite heart outline button 1
+REPLY
+vicentgn profile image Vicent García github logoJun 10Dropdown menu
+Ok! Thanks!
+
+Favorite heart outline button 2
+THREAD
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorJun 10Dropdown menu
+If you want to updating the release check
+create-react-app.dev/docs/updating...
+
+Favorite heart outline button 2
+THREAD
+vicentgn profile image Vicent García github logoJun 10Dropdown menu
+Perfect!
+Thanks!
+
+Favorite heart outline button 2
+REPLY
+idngessnio profile image Idong Essien twitter logo github logoMay 17Dropdown menu
+Hello ! This was a big help ! However, at step 5, I received this error:
+
+"Cloning into 'node_modules/gh-pages/.cache/git@github.com!idongessien!idngessnio.git'...
+Warning: Permanently added the RSA host key for IP address '140.82.114.4' to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! idngessnio@0.1.0 deploy: gh-pages -d build
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the idngessnio@0.1.0 deploy script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR! /Users/idongessien/.npm/_logs/2020-05-17T18_23_28_805Z-debug.log"
+
+Favorite heart outline button 5
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorMay 17Dropdown menu
+Setup ssh key bro
+
+Favorite heart outline button 1
+REPLY
+idngessnio profile image Idong Essien twitter logo github logoMay 17Dropdown menu
+Forgive me but how do I do that ? I am a newbie here
+
+Favorite heart outline button 1
+THREAD
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorMay 17Dropdown menu
+Check this help.github.com/en/enterprise/2.15...
+
+Favorite heart outline button 2
+REPLY
+pitysek16 profile image Katerina Pidan github logoMar 18Dropdown menu
+Hello, Ibrahim.
+I have such problem:
+fatal: A branch named 'gh-pages' already exists.
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! movie@0.1.0 deploy: gh-pages -d build
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the movie@0.1.0 deploy script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+Can you help me? Here is my repo github.com/pitysek16/Movies-React-app
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorMar 18Dropdown menu
+hii katerina check last commit in this repo
+github.com/Yuribenjamin/Movies-Rea...
+and already your app running
+yuribenjamin.github.io/Movies-Reac...
+
+if you fix this tell me to delete repo above.
+
+Favorite heart outline button 1
+REPLY
+pitysek16 profile image Katerina Pidan github logoMar 18Dropdown menu
+Thank you! It is work
+
+Favorite heart outline button 2
+REPLY
+solicks profile image solicks github logoMay 24Dropdown menu
+Please what did you do to resolve it. I'm having the same issue.
+
+Favorite heart outline button 1
+THREAD
+siminmaleki profile image Simin Maleki twitter logoMay 30Dropdown menu
+when you receive error " A branch named 'gh-pages' already exists.", you have to delete the .config sub-folder in gh-pages folder in node_module.
+
+Favorite heart outline button 1
+REPLY
+zacastaylor profile image Zac Taylor github logoOct 6 '19Dropdown menu
+Hey Ibrahim, my app won't deploy. I went over your instruction twice but am still having issues. Would you mind taking a look at my repo, it's github.com/ZacASTaylor/zacastaylor.... Thanks!
+
+Favorite heart outline button 3
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorOct 6 '19Dropdown menu
+Hello Zac
+
+you did well but you need to make some changes to make your project run online kindly follow this process carefully:
+
+1 - you need to change repo name because of dots in repo name conflict with URL, zacastaylor it's good enough and works with me.
+
+2- in package.json change homepage with new value should be "zacastaylor.github.io/zacastaylor"
+
+2.1- change predeploy to the new value "npm run build", yarn is fine but it's not tested.
+
+3- in App.js change line 25 to be <Route exact path='/zacastaylor'
+
+4- in component => layout => Header.js line 37 to be <Link to="/zacastaylor"
+
+download the project and change the repo name, after that remove the old connection you can check git remote -v you will see this connected with old repo remove connection by git remote rm this command will take one parameter the full command will be git remote rm origin.
+
+if you check again git remote -v will display nothing to your terminal after that do the change above and make a commit with new changes then push and run npm run deploy.
+
+happy to hear from you Zac, kindly update me if this process success or fail
+
+Favorite heart outline button 3
+REPLY
+zacastaylor profile image Zac Taylor github logoOct 6 '19Dropdown menu
+Thanks so much for you help Ibrahim, but the issue was that I needed slightly different instructions because I am trying to have my React app hosted on my GitHub user page and not a project page. I followed the instructions here: dev.to/javascripterika/deploy-a-re...
+
+Thanks again!
+
+Favorite heart outline button 3
+REPLY
+pak11273 profile image Isaac Pak github logoApr 6Dropdown menu
+video is private...
+
+Favorite heart outline button 1
+REPLY
+seamanb2k profile image DigitalEmma twitter logo github logoAug 16 '19Dropdown menu
+found this post useful, thank you...I have a question, after i have pushed my react app to github page, when i visit the url it displays blank with no error message shown, any pointers why i'm seeing this happen/
+plus this is my first project in react.
+Thank you
+
+Favorite heart outline button 3
+REPLY
+piruthuvi22 profile image Piruthuvi github logoApr 25Dropdown menu
+I got this same problem in the beginning. If you follow this tutorial correctly,then try this one.
+
+Your home page route should be like this
+
+
+
+
+
+
+
+<Route exact path="/your github repo name">
+
+
+
+
+
+instead for
+
+and in your rendered component change the
+
+
+
+
+
+
+<Link to="/your github repo name">
+
+
+
+
+
+instead for
+
+
+
+
+
+
+<Link to="/">
+
+
+
+
+
+And another important point you should consider. your github repo name must be valid name for example dots or space should not be in your repo name because that things conflict with URL.Favorite heart outline button 3
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorAug 16 '19Dropdown menu
+Thanks, double check your process, if the same error occurred please share with me your github repo and I will help immediately
+
+Favorite heart outline button 2
+REPLY
+kimberlybone profile image Kimberly Bone github logoJan 14Dropdown menu
+How would I add changes (such as changing the header, font, color, etc) to the page after deploying? I committed and pushed and it successfully shows on my github repo but when I go to my live link none of my changes show.
+
+My repo: github.com/kimberlybone/my-portfol...
+My live site: kimberlybone.github.io/my-portfoli...
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorJan 14Dropdown menu
+did you try to delete GH-page branch && build directory, and deploying the app again? if not try this
+
+Favorite heart outline button 1
+REPLY
+legyta profile image Ligita Montvilaite github logoApr 24Dropdown menu
+Hey - does this mean, everytime you update something on the page, we need to Delete Gh-page branch && delete build directory folder, and basically deploy again?
+
+Is there no automatic update happening? (i.e. like, when deployed on netlify or smhtg.) ? Thanks!
+
+Favorite heart outline button 2
+THREAD
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorApr 27Dropdown menu
+to update run npm run deploy after each update
+
+Favorite heart outline button 1
+REPLY
+lkian profile image Leah github logoApr 16Dropdown menu
+Hi. I am having issues deploying my React app to github pages. Could you take a look?
+github.com/LKian/ToDoList
+
+I added homepage to package.json, along with
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build"
+
+I added the gh-pages as a dev dependency
+
+The error seems to occur when I run "npm run deploy"
+
+todolist@0.1.0 build /mnt/c/Users/Admin/Desktop/Code/todolist
+react-scripts build
+
+internal/modules/cjs/loader.js:638
+throw err;
+^
+
+Error: Cannot find module 'react-dev-utils/crossSpawn'
+at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)
+at Function.Module._load (internal/modules/cjs/loader.js:562:25)
+.
+.
+.
+.
+
+Thank you!
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorApr 16Dropdown menu
+hello Leah
+give it try again I cloned your repo and walked through my tutorial,
+and everything working fine with me check ...
+dev-to-uploads.s3.amazonaws.com/i/...
+dev-to-uploads.s3.amazonaws.com/i/...
+dev-to-uploads.s3.amazonaws.com/i/...
+
+Favorite heart outline button 1
+REPLY
+lkian profile image Leah github logoApr 16Dropdown menu
+Oh thanks for the screenshots. The only difference I noticed was that for some reason even though I installed "gh-pages" yesterday, it wasn't there. I re-installed and gh-pages now appears in package.json.
+
+I then tried to npm run deploy and am still getting an error. Any other thoughts as to what is wrong?
+
+Creating an optimized production build...
+Failed to compile.
+
+./src/index.js
+Error: [BABEL] /mnt/c/Users/Admin/Desktop/Code/todolist/src/index.js: Cannot find module '@babel/core' (While processing: "/mnt/c/Users/Admin/Desktop/Code/todolist/node_modules/babel-preset-react-app/index.js")
+
+I read that the gh-pages is supposed to create a new branch but that is not happening. I'm going to try to delete the repo and start from scratch. After I make a new repo, should I still be running the following setup commands?
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:LKian/ToDoList.git
+git push -u origin master
+
+and THEN running npm run deploy? Still getting an error
+
+Update: I deleted node_modules and package-lock.json and npm installed again. And it says published!!!!!!!!!! Still not showing up on the live page but I know sometimes it takes a while. Will keep you updated :-)
+
+lkian.github.io/ToDoList/index.html
+
+Got it. Apparently you have to add "/index.html" to the path
+
+Favorite heart outline button 2
+THREAD
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorApr 16Dropdown menu
+no, just the URL that equal to the home page key in the package.json
+lkian.github.io/ToDoList
+dev-to-uploads.s3.amazonaws.com/i/...
+
+Favorite heart outline button 1
+REPLY
+springdot profile image Akanksha priya github logoMay 21Dropdown menu
+Hi! At step 5, I added SSH keys however I received such error:
+Cloning into 'node_modules/gh-pages/.cache/git@github.com!Spring-dot!face-detector.git'...
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! face-detector@0.1.0 deploy: gh-pages -d build
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the face-detector@0.1.0 deploy script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR! /home/akanksha/.npm/_logs/2020-05-21T06_16_57_148Z-debug.log
+Please help!! I am a beginner!
+
+Favorite heart outline button 2
+REPLY
+strel9 profile image Oleksandr Strelchenko github logoMay 31Dropdown menu
+stackoverflow.com/questions/607806...
+
+Favorite heart outline button 1
+REPLY
+tianyiz8 profile image tianyiz8 github logoMar 25Dropdown menu
+Hello, i am doing the routing for my website, but only the landing page shows up. Could you have a look? I think the problem should be in index.js, main.js, App.js. Thanks!!
+tianyiz8.github.io/personal-website/
+github.com/tianyiz8/personal-website
+
+Favorite heart outline button 1
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorMar 25Dropdown menu
+Hey thanks for your comment, handling route in react can easly done by using react router package, not by default way as i saw in your app, also read about Single Page App, and declaritive programming
+github.com/ReactTraining/react-router
+Happy Hacking!
+
+Favorite heart outline button 1
+REPLY
+tianyiz8 profile image tianyiz8 github logoMar 25Dropdown menu
+Hello! Could you be more specific? I did use react-router-dom, and where are declaritive programming and Single Page App? I still have no idea how to make it work.
+Thanks!
+
+Favorite heart outline button 1
+THREAD
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorMar 25Dropdown menu
+if so then why you declare a tag to route
+check
+reacttraining.com/react-router/web...
+
+Favorite heart outline button 1
+REPLY
+ian1202 profile image ian1202 github logoJan 24Dropdown menu
+Hi Ibrahim, I have recently built my first react project. Despite having followed all your instructions on the thread, my app won't deploy. Would appreciate it if you could take a look at it for me:
+
+ian1202.github.io/react-project/
+
+Thank you!
+
+Favorite heart outline button 1
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorJan 24Dropdown menu
+Not all the instruction I think, do this changes to package dot json, change home to homepage and add the right value "http://{username}.github.io/{repo-name}" . Solved
+
+Favorite heart outline button 2
+REPLY
+ian1202 profile image ian1202 github logoJan 24Dropdown menu
+It worked! Sorry for having missed that detail. Thank you!
+
+Favorite heart outline button 2
+THREAD
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorJan 24Dropdown menu
+Your are welcome, Alawys happy to help 🙂
+
+Favorite heart outline button 1
+REPLY
+marissa profile image Marissa github logoMay 6Dropdown menu
+Hello, Ibrahim! Thank you for your tutorial. I was just wondering what changes would be necessary if I wanted to deploy the react app directly to the homepage (eg.: username.github.io), if that's even possible.
+
+Favorite heart outline button 3
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorMay 6Dropdown menu
+Hey Marissa, yea check this dev.to/javascripterika/deploy-a-re...
+Happy hacking!
+
+Favorite heart outline button 2
+REPLY
+bruck1701 profile image Bruno Kümmel github logoApr 1Dropdown menu
+Great Post! Thank you for sharing it !
+Is it possible to deploy it when you have API Keys in your code?
+
+Normally when we send our code to git, we put the files with API keys or secrets in the .gitignore file and use the Git hub only as a repository. I want to deploy a simple app that has an API in it. Any ideas?
+
+Thanks a lot!
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorApr 1Dropdown menu
+Urw welcome bruno, since we're working with react-app you can check
+create-react-app.dev/docs/adding-c...
+
+Favorite heart outline button 1
+REPLY
+mjach2 profile image mjach twitter logoDec 6 '19Dropdown menu
+I deployed my react app to GitHub and its working but not what I expected. When I run the app on the localhost its works perfectly and I can see all the pictures and all the navigation works. After deploy on Github, I can not see anymore the images which were a relative path link to my app and also navigation back button seems not working. Any hints on how to overcome these issues. Here is react app Github deployed Link- Your site is published at mjachowdhury.github.io/mjacportfolio/
+
+would you please look into this
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorDec 18 '19Dropdown menu
+hey mjach your problem-specifically in routing there's a difference between routing on dev server and the production double-check this point I know you can do it, and if not sadly contact me and I will fix this for you
+
+Favorite heart outline button 1
+REPLY
+andrii profile image Andrii twitter logo github logoFeb 18Dropdown menu
+Hi, I have this error:
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Favorite heart outline button 1
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorFeb 18Dropdown menu
+can you provide your github repo
+
+Favorite heart outline button 2
+REPLY
+andrii profile image Andrii twitter logo github logoFeb 18Dropdown menu
+Sure: github.com/andrii1
+I'm trying github pages here: github.com/andrii1/andrii1.github.io
+
+Favorite heart outline button 2
+THREAD
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorFeb 18Dropdown menu
+in this tutorial, I introduced deploying react App to Github pages, I see your app didn't consume react packages, so you can deploy your app using the normal process by open settings navigate to GitHub Pages then in Source choose the master branch if you want run your app from the master branch.
+happy hacking!
+
+Favorite heart outline button 2
+THREAD
+andrii profile image Andrii twitter logo github logoFeb 18Dropdown menu
+Sorry, can you specify a bit? I need to push it in separate repository inside /andrii1.github.io?
+
+Favorite heart outline button 2
+THREAD
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorFeb 18Dropdown menu
+what I need to say your app not a react app so you don't need this tutorial to deploy it to gihtub you can deploy it from the setting
+
+Favorite heart outline button 1
+THREAD
+andrii profile image Andrii twitter logo github logoFeb 19Dropdown menu
+So, I have my React app in separate folder my-app, when I'm trying to upload it to GitHub, I see this:
+dev-to-uploads.s3.amazonaws.com/i/...
+
+Favorite heart outline button 1
+THREAD
+andrii profile image Andrii twitter logo github logoFeb 19Dropdown menu
+Update: issue was solved with:
+git push -f origin master
+
+But, still andrii1.github.io/my-app is not live..
+github.com/andrii1/my-app
+
+Favorite heart outline button 1
+REPLY
+mirelescloud profile image Alex github logoFeb 1Dropdown menu
+Great article. I got it to work publishing the react app. Note that for the homepage I used "https" rather than "http". Also since I used yarn for my packages I tried to use it for the deploy as well, but it didn't work. I got it to work with npm however. Thanks again.
+
+Favorite heart outline button 2
+REPLY
+eaindrawp profile image Eaindra Wun Pyae github logoFeb 3Dropdown menu
+Hello Ibrahim, my app deploys now, but it is showing only HTML plain webpage. Would you mind looking at my Github repo, and guide me any necessary changes to my project? github.com/eaindra-wp/portfolio
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorFeb 3Dropdown menu
+hey Eaindra can you make master is the default, not Github pages to be able to clone your repo.
+and put "homepage": "xyz....", at the top of your module
+and check console errors, make sure console is free!
+
+Favorite heart outline button 2
+REPLY
+eaindrawp profile image Eaindra Wun Pyae github logoFeb 3Dropdown menu
+Hello Ibrahim, I have updated the steps that you suggested, but it seems like my react-app cannot find the CSS files yet.
+
+Favorite heart outline button 1
+REPLY
+pauluzo profile image pauluzo github logoNov 18 '19Dropdown menu
+Hello Ibrahim. I followed your tutorial and I am trying to deploy my first app to github pages. I keep getting this error when I run "npm run deploy".
+
+gh-pages -d build
+
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Any help please?
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorDec 18 '19Dropdown menu
+make sure that you provide the right credentials
+
+Favorite heart outline button 1
+REPLY
+kriviears profile image Kriviears github logoDec 18 '19Dropdown menu
+I followed the instructions and got the same messages from the terminal up to right under the "gh-pages -d build" and then I get these lines
+
+gh-pages -d build
+
+bash: /dev/tty: No such device or address
+error: failed to execute prompt script (exit code 1)
+fatal: could not read Username for 'github.com': Invalid argument
+
+my repo is github.com/Kriviears/React-Portfolio
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorDec 18 '19Dropdown menu
+hey Kriviears, first you should fix all bugs before deploy, second check this repo this is your app running successfully, and double-check the fix commit after you fix this problem notify me to delete you repo = >
+yuribenjamin.github.io/React-Portf...
+github.com/Yuribenjamin/React-Port...
+
+Favorite heart outline button 1
+REPLY
+pniebrzydowski profile image pniebrzydowski github logoMay 25Dropdown menu
+In case anyone else runs into the same issue that I had. When running the build command for the first time, I got error:
+
+fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.
+
+Creating a new branch gh-pages manually before running the deploy fixed this.
+
+Favorite heart outline button 1
+REPLY
+irenkaaa profile image Irena Mishonova github logoApr 6Dropdown menu
+Helloooo :)
+So, I am begginer... and I did what you "said"...and it worked... although I have two issues that I dont understand.
+
+that is supposed to be my project page - irenkaaa.github.io/sweet-shop-proj... ... when u go is showing my 'not found page'... but when u click on the header parts, it is working - but with changed address - irenkaaa.github.io/{home?store?login ..etc.}..and it is only working the views... my node.js server is not exactly on there..
+also the other thing... after the deploying , i got that build folder.. and basically...all my files changed and i caouldnt working on the project..Idk how but I managed to return them and now I can work, but I am totally lost...
+Favorite heart outline button 1
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorApr 6Dropdown menu
+first issue check routing, second cuz you watch gh-branch change to master
+happy hacking!
+
+Favorite heart outline button 2
+REPLY
+irenkaaa profile image Irena Mishonova github logoApr 7Dropdown menu
+Thanks a lot! On my way to check the stuff!!!
+
+Keep safe from Covid!
+
+Favorite heart outline button 2
+REPLY
+itsgiovanni profile image ItsGiovanni github logoNov 21 '19Dropdown menu
+Lovely. Thank you for this.
+
+If you're having the following error:
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Remove your remote:
+git remote remove origin
+
+Then create a new remote. no marks:
+git remote add ht tps://github.com/username/repo-name.git
+
+Using the git@github.com:... syntax ends up using SSH to clone, and inside the container, your private key is not available.
+
+Favorite heart outline button 2
+REPLY
+shvmsrma profile image Shivam Sharma twitter logoApr 3Dropdown menu
+Hi Ibrahim, First Thank you for a such a wonderful and helping blog.I have one doubt that i was able to succesfully deploy my react app but when i make changes locally i am unable to get those changes on my react app. Can you please guide how to do that in a proper way?
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorApr 3Dropdown menu
+Yeah make changes commit and run the deploy again to generate fresh build your terminal will tell you the rest,
+Another way delete build delete gh branch make changes rub deploy
+Happy Hacking
+
+Favorite heart outline button 1
+REPLY
+oliverwatkins profile image Oliver Watkins github logoMay 29Dropdown menu
+This does not work for me. Did everything exactly as you wrote but I get this error :
+
+git-upload-pack '.': git-upload-pack: command not found
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Favorite heart outline button 1
+REPLY
+sotomaque profile image sotomaque github logoFeb 20Dropdown menu
+Hey Ibrahim, thank you for the tutorial, I have previously used it to deploy other apps. At the moment I am trying to use it to deploy a simple CRUD app, but am getting a blank html page. Do you mind taking a look? github.com/sotomaque/graphql-react...
+sotomaque.github.io/graphql-react-...
+
+Favorite heart outline button 1
+REPLY
+alexxfreitag profile image alexxfreitag github logoApr 10Dropdown menu
+if we have a mono repository, with backend and frontend folder, the backend will works correctly when we deploy the app or do we have to deploy the backend in another place, like heroku, and use the heroku url to connect with the frontend?
+
+Favorite heart outline button 1
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorApr 11Dropdown menu
+Yes deploy backend in another service and connect
+
+Favorite heart outline button 2
+REPLY
+nikhilroy2 profile image nikhilroy2 github logoFeb 20Dropdown menu
+After I deploy the application and I make some change but I can't update the change, how can I do that? I use git push -u origin master but not updating the changes. It's updating only again npm run deploy but it's load all file again, I need only update specific changes.
+
+Favorite heart outline button 1
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorFeb 20Dropdown menu
+Delete github branch and build file make your changes commit then deploy easy peasy
+
+Favorite heart outline button 1
+REPLY
+akeber89 profile image Rebeka Meszaros github logoApr 21Dropdown menu
+Hi Ibrahim, I wonder if you can help. I have already managed to deploy my React app once but after changing the repo name, then following your instructions again it stopped working. The link is akeber89.github.io/React-App-Table... , what do you suggest I do?
+
+Favorite heart outline button 1
+REPLY
+mingyong profile image Ming Yong twitter logo github logoNov 3 '19Dropdown menu
+Hi Ibrahim, thanks for the article! Works perfectly :D
+
+By the way, I think you are missing a "g" for the git commit -m "Your awesome message" in point 6.
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorNov 3 '19Dropdown menu
+Yeah thanks ming 😁👍
+
+Favorite heart outline button 1
+REPLY
+makhosi6 profile image makhosi6 github logoFeb 5Dropdown menu
+Ibrahim Ragab, Please help, I followed all the steps above and my site went live for some time and then it started showing these react instructions(check the attached screenshot)
+
+raw.githubusercontent.com/makhosi6... (Image)
+makhosi6.github.io/movie-app/ (Site)
+
+Favorite heart outline button 1
+REPLY
+caseycling profile image caseycling github logoJan 29Dropdown menu
+Hey Ibrahim,
+
+Thanks for the tutorial. I've got this to work when I am hosting a react app with only one package.json but now that I am trying to deploy an app with two, I'm not sure how to do it. It is some issue with how to fire the scripts once I start the app. I imagine I'll need to put the deploy and predeploy scripts in the client package.json but I'm not sure if there will be any bugs created because of that. Right now, the react front end is up and loads but I can't seem to access my database to display relevant data. Can you help me?
+
+Here is where its hosted: caseycling.github.io/MERN-Stack/
+Here is my code: github.com/caseycling/MERN-Stack/t...
+
+Favorite heart outline button 1
+REPLY
+codechiha profile image David Situ github logoMay 18Dropdown menu
+I am trying to install gh-pages. I followed instructions exactly, using npm.
+
+Then I tried using yarn
+
+"predeploy": "yarn build",
+"deploy": "gh-pages -d build", 
+yarn deploy
+
+Shows this Error with both npm and yarn
+
+Error: spawn git ENOENT
+at Process.ChildProcess._handle.onexit (internal/child_process.js:190:19)
+at onErrorNT (internal/child_process.js:362:16)
+at _combinedTickCallback (internal/process/next_tick.js:139:11)
+at process._tickCallback (internal/process/next_tick.js:181:9)
+at Function.Module.runMain (module.js:696:11)
+at startup (bootstrap_node.js:204:16)
+at bootstrap_node.js:625:3
+
+Favorite heart outline button 1
+REPLY
+kunalkashyap855 profile image Kunal Kashyap github logoApr 23Dropdown menu
+Hey! Thank you for this tutorial, I was able to deploy my react app successfully. I just had one question, now if I have made some changes to the app, how do I upload them on the deployed site? Do I just run npm run deploy again?
+
+Favorite heart outline button 1
+REPLY
+ankitbavadiya profile image ankit github logoJun 3Dropdown menu
+Hello ! I don't know about this plz help!!
+
+npm ERR! Unexpected end of JSON input while parsing near '...zoGC0To0Oe4FmdFXxry04'
+
+npm ERR! A complete log of this run can be found in:
+npm ERR! C:\Users\ankit\AppData\Roaming\npm-cache_logs\2020-06-03T16_46_52_868Z-debug.log
+
+Favorite heart outline button 1
+REPLY
+piruthuvi22 profile image Piruthuvi github logoApr 25Dropdown menu
+first, thank you.I deployed my app using github with this article.but after the deployment when i refresh my site’s pages, i got 404 error that indicate “file not found ( must provide an “index.html” file) . Could you please help me?
+
+Favorite heart outline button 1
+REPLY
+gsus0194 profile image Jesús Salvador Villegas Cambero github logoDec 28 '19Dropdown menu
+I gave it a try, but I'm getting a 404 error. Any idea what it can be?
+
+repo: github.com/gsus0194/gsus0194.githu...
+gitpage: gsus0194.github.io/professional_we...
+
+Thanks
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorDec 29 '19Dropdown menu
+hi bro, give your app and repo simple name without any special characters kindly check this commit for fix this bug github.com/Yuribenjamin/gsus/commi...
+and your app is running successfully
+yuribenjamin.github.io/gsus/
+finally, after fixing this issue tell me to delete your repo
+
+Favorite heart outline button 1
+REPLY
+gsus0194 profile image Jesús Salvador Villegas Cambero github logoDec 29 '19Dropdown menu
+Thanks! you can delete it
+
+Favorite heart outline button 2
+THREAD
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorDec 29 '19Dropdown menu
+Happy hacking!
+
+Favorite heart outline button 2
+REPLY
+gabrielmlinassi profile image Gabriel Linassi github logoMay 17Dropdown menu
+man this gh-pages package is pure magic. Super cool! Took all my suffer of deploying to gh pages. Before it I used to do stuff like track build folder into master branch and do a subtree to gh-pages branch. Like this:
+
+git push origin --delete gh-pages &&
+git branch -D gh-pages &&
+git subtree split --prefix build -b gh-pages
+
+Favorite heart outline button 1
+REPLY
+hs844 profile image hs844 github logoJun 10Dropdown menu
+Hello ibrahim,
+
+ive followed your steps exactly, however my app loads on the local host but just opens up a blank page when loaded from my git hub repository? any help that would be greatly appreciated!
+thanks!
+
+Favorite heart outline button 1
+REPLY
+deven96 profile image Diretnan Domnan github logoJun 27 '19Dropdown menu
+Nice article ... love your github page even more
+
+Favorite heart outline button 3
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorJun 27 '19Dropdown menu
+Thanks mate :)
+
+Favorite heart outline button 2
+REPLY
+rolypolyistaken profile image Roly Poly Was Taken twitter logoJan 8Dropdown menu
+I don't understand the steps in 4: "Create a Github repository and initialize it and add it as a remote in your local git repository.
+
+Now, create a remote GitHub repository with your app name and go back initialize this"
+
+What is a Github repository? I know that part. But I don't know how to "initialize it" or "add it as a remote in my local git repository". I can't get past that part. Please advise, someone!
+
+Favorite heart outline button 1
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorJan 8Dropdown menu
+hi roly kindly this guide will give a solid understanding of what is git and what is these mysterious commands check git-scm.com/docs/gittutoria , simply your projects are the repository and git init = git initialize your projects for git to track your changes.
+stay in touch if you need any help, thanks and happy hacking!
+
+Favorite heart outline button 1
+REPLY
+oliverwatkins profile image Oliver Watkins github logoMay 29Dropdown menu
+This doesn't work for me at all. I get a 404 Error.
+
+Are you sure there isn't another step you are missing?
+
+My package.json has this :
+
+"name": "shape-shop-frontend",
+"homepage": "oliverwatkins.github.io/alpenhof",
+
+I have connected to my remote repository here :
+
+github.com/oliverwatkins/shape-sho...
+
+And then I have run
+
+"npm run deploy"
+
+Are you sure there you don't have to create some io repository? In the github pages it says something about creating an "io" repo :
+
+.github.io
+
+Favorite heart outline button 1
+REPLY
+pak11273 profile image Isaac Pak github logoApr 6Dropdown menu
+You have some people running into a problem with "Permission denied (publickey). fatal: Could not read from remote repository” when they are deploying. If this is you, then this solution might work for you: superuser.com/questions/1435950/gi...
+
+Favorite heart outline button 1
+REPLY
+affectus01 profile image Affectus01 github logoFeb 28Dropdown menu
+Im having issues with my components outside of App.js. The im getting 404 errors when i try to go anywhere but my git hub page. Can you take a look at this for me?
+
+affectus01.github.io/nolan-softworks/
+github.com/Affectus01/nolan-softworks
+
+Favorite heart outline button 1
+REPLY
+tyronenorth profile image Tyrone North github logoDec 4 '19Dropdown menu
+Thanks for the great instructions. Works for me.
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorDec 18 '19Dropdown menu
+Thanks, Tyrone
+
+Favorite heart outline button 1
+REPLY
+sajjankarn profile image SajjanKarn github logoApr 29Dropdown menu
+can i deploy as much as i want? or there's some limitations?
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorApr 29Dropdown menu
+As much as you can
+
+Favorite heart outline button 1
+REPLY
+robpwatkins profile image robpwatkins github logoMay 4Dropdown menu
+Worked like a charm right away! Thanks so much. This was super helpful.
+
+Favorite heart outline button 2
+REPLY
+ariellb profile image Ariel Elbahar github logoApr 22Dropdown menu
+hi Ibrahim! i have a problem after i finished doing all the instructions i have a blank page when i try to access the page.
+ariellb.github.io/ColorApp/
+this is the source code for the project:
+github.com/ArielLB/ColorApp
+
+please help me! thanks
+
+Favorite heart outline button
+REPLY
+andrescampuzano profile image Andres Campuzano twitter logo github logoDec 10 '19Dropdown menu
+Thanks so much, it really helps me a lot!
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorDec 18 '19Dropdown menu
+Thanks Anders
+
+Favorite heart outline button 2
+REPLY
+tukno profile image David Oliveira github logoJan 20Dropdown menu
+Yoo thanks!
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorJan 20Dropdown menu
+welcome David
+
+Favorite heart outline button 1
+REPLY
+whenicode profile image when-i-code github logoFeb 17Dropdown menu
+Thank you! Also I would like to add something:
+
+if you can't do git push use "git push -f origin master"
+
+Favorite heart outline button 3
+REPLY
+caffiendkitten profile image DaNeil Coulthard github logoJan 7Dropdown menu
+Thanks for the post. This was super helpful with setting up my own react app in gh pages.
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorJan 7Dropdown menu
+You are welcome Daniel!
+
+Favorite heart outline button 1
+REPLY
+poburi profile image 포부리 github logoDec 24 '19Dropdown menu
+thank you so much!
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorDec 24 '19Dropdown menu
+You're welcome
+
+Favorite heart outline button 1
+REPLY
+lidorb94 profile image Lidor Batino github logoNov 20 '19Dropdown menu
+thank you very much, but i have a problem after i did npm run deploy it shows me a blank page... can you help me on how to fix it?
+this is my repo...
+github.com/lidorb94/instagram-ui
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorDec 18 '19Dropdown menu
+Hey Lidor, your problem in routing double-check this point, this causes the black screen because you define your homepage URL as a start point for routing and you did not specify it in app.js, check the difference between dev server and prod.
+
+Favorite heart outline button 1
+REPLY
+layersofabstraction profile image Jordan Nash github logoAug 21 '19Dropdown menu
+Thank you. I had to follow every step and re-watch your no-nonsense video for this to work from the beginning but it was actually more helpful than React's documentation for deploying SPAs.
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorAug 22 '19Dropdown menu
+Thanks! I will rework this soon with more detailed steps also enhance video
+
+Favorite heart outline button 1
+REPLY
+johnmutina profile image JohnMutina github logoJul 1 '19Dropdown menu
+Thank you for this, Ibrahim! Cheers
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorJul 1 '19Dropdown menu
+You are welcome John Cheers :)
+
+Favorite heart outline button 2
+REPLY
+mhkamel profile image MHKamel github logoJun 28 '19Dropdown menu
+Nice article ... love your github page even more
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorJun 28 '19Dropdown menu
+Thanks Mohamed :)
+
+Favorite heart outline button 1
+REPLY
+apol0x profile image Apol0x twitter logo github logoJun 27 '19Dropdown menu
+Nice introductiong man. Saved it ;)
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorJun 27 '19Dropdown menu
+Thanks :)
+
+Favorite heart outline button 3
+REPLY
+marcmdion profile image marcmdion github logoOct 17 '19Dropdown menu
+Hi Ibrahim, How would you update a react app that you have deployed via GitHub? Thanks, Marc
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorOct 19 '19Dropdown menu
+Hello Mark I hope you're doing well, if you want to updating to new releases check this link below
+create-react-app.dev/docs/updating...
+
+Favorite heart outline button 1
+REPLY
+venkatraja007 profile image venkatraja007 github logoApr 21Dropdown menu
+Hi Ibrahim ,
+
+My app deployed successfully but url is not working for my page its showing readme file onyl.
+
+venkatraja007.github.io/democart54/
+If you don't mind can i get help on this .
+
+Favorite heart outline button 1
+REPLY
+kshubhranshu profile image KUMAR SHUBHRANSHU github logoApr 23Dropdown menu
+It says 404 error
+kshubhransu.github.io/react-login-app
+
+Favorite heart outline button 1
+REPLY
+itsmacky profile image itsMacky github logoMay 8Dropdown menu
+Hey Ibrahim, i followed as you mentioned, but i got black screen when i visit my site url= itsmacky.github.io/myapp/
+
+my repo:- github.com/itsMacky/myapp
+
+please do help me.
+
+Favorite heart outline button 1
+REPLY
+mitchelln11 profile image mitchelln11 github logoMay 13Dropdown menu
+Does it ever just take some time to start displaying? I'm being sent to a page displaying all of the npm options, which I already did.
+
+Favorite heart outline button 1
+REPLY
+shrey profile image shrey github logoApr 15Dropdown menu
+shrey.github.io/monsters-rolodex-r...
+
+I followed all the steps, and it says it's deployed, can you please click on the link and see what's the issue
+
+Favorite heart outline button 1
+REPLY
+ernesthenry profile image ernestkato github logoApr 25Dropdown menu
+How can specify that root component that will display as our homepage
+
+Favorite heart outline button 1
+REPLY
+kseniyaco profile image KseniyaCo github logoAug 2 '19Dropdown menu
+Hello. I followed all the instructions, but when I enter npm run deploy I recieve "The "file" argument must be of type string. Received type undefined" error. How to handle this? Thank you
+
+Favorite heart outline button 1
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorAug 2 '19Dropdown menu
+Can you double Check the package.json file make sure you set correctly the homepage, predeploy, deploy check commas single quotes or double, if not provide me your repo url and make sure I will help
+
+Favorite heart outline button 1
+REPLY
+priyesh2109 profile image Priyesh2109 github logoMar 26Dropdown menu
+Hello great article but i am having a few issues on mine. I am not seeing any changes, please could you take a look here.
+
+github.com/Priyesh2109/my-fourthnn
+
+Favorite heart outline button 1
+REPLY
+shahzzoda profile image Shahzoda D. twitter logo github logoMay 8Dropdown menu
+Thanks for the article! One thing I'd like to add is I had to change my serving branch to gh-pages after running deploy. Otherwise it served the readme file for me.
+
+Favorite heart outline button 1
+REPLY
+idngessnio profile image Idong Essien twitter logo github logoMay 17Dropdown menu
+Hello thanks for this however at step 5 I received this error:
+
+Favorite heart outline button 1
+REPLY
+josuemrt profile image JosueMrt github logoMar 24Dropdown menu
+Thanks that worked perfectly! Just a question, if I update my app and I want the updates to be visible on my github page, do I need to push to gh-pages or deploy again?
+
+Favorite heart outline button 2
+REPLY
+yuribenjamin profile image Ibrahim Ragab twitter logo github logo AuthorMar 24Dropdown menu
+Both first commit changes push as usually, then deploy to generate new build files, if something goes wrong delete gh branch and build directory and deploy again.
+Happy hacking
+
+Favorite heart outline button 1
+REPLY
+josuemrt profile image JosueMrt github logoMar 24Dropdown menu
+Thanks! :D
+
+//End of Deploy React App instructions -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------

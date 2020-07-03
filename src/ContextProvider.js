@@ -12,22 +12,30 @@ function ContextProvider({children}) {
       space: '8h2joeckc394',
       accessToken: 'dIQ8tryIq-BA621gJKeUyecDfVRndSEjxsu_Cflzz08' })
   
-    client.getEntries().then(entries => {
-        entries.items.forEach(entry => {
-            if(entry.fields) {
-            console.log(entry.fields)
-            }
-        })
-    })
+    function getBlogEntries() { 
+        console.log("im in getBlogEntries")  
+        client.getEntries()
+        .then(entries => storeBlogEntries(entries))
+    }
 
-    // fetchPosts = () => client.getEntries()
+    function storeBlogEntries(entries) {
 
+        let allBlogEntries = []
 
-    // useEffect(() => {
-    //     fetchPosts()
-    //     .then(setPosts())
-    // } ,[])
+        console.log("im in storeBlogEntries") 
+        // console.log(entries.items.map(element => {return element}))
+
+        allBlogEntries = entries.items.map(element => {return element})
+        console.log("allBlogEntries array =")
+        console.log(allBlogEntries)
+
+        setPosts(allBlogEntries)
+        console.log("this is posts")
+        console.log(posts)
+    }
     
+
+    useEffect(() => {getBlogEntries()} ,[])
 
     return(
         <Context.Provider value="testvalue" >

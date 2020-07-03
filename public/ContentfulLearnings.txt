@@ -1,0 +1,134 @@
+These blogs are pretty good.
+
+https://hackernoon.com/building-a-blog-with-react-and-contentful-fd538f68f6fb
+
+https://blog.logrocket.com/using-a-headless-cms-with-react/
+
+Learnings and notes
+-------------------
+
+1) When you've created the schema/content model for what you're going to publish, then Contentful will
+create a JSON object based on it:
+
+{
+  "name": "Test Content",
+  "description": "This is the content model for my test content",
+  "displayField": "title",
+  "fields": [
+    {
+      "id": "title",
+      "name": "Title",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "slug",
+      "name": "Slug",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "description",
+      "name": "Description",
+      "type": "RichText",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "featuredImage",
+      "name": "Featured image",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Asset"
+    },
+    {
+      "id": "date",
+      "name": "Date",
+      "type": "Date",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "body",
+      "name": "Body",
+      "type": "RichText",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    }
+  ],
+
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "8h2joeckc394"
+      }
+    },
+    "id": "testContent",
+    "type": "ContentType",
+    "createdAt": "2020-07-03T08:13:57.351Z",
+    "updatedAt": "2020-07-03T08:15:46.794Z",
+    "environment": {
+      "sys": {
+        "id": "master",
+        "type": "Link",
+        "linkType": "Environment"
+      }
+    },
+    "publishedVersion": 3,
+    "publishedAt": "2020-07-03T08:15:46.794Z",
+    "firstPublishedAt": "2020-07-03T08:13:57.900Z",
+    "createdBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "3PQZJGf2hHPIsjfpoCuJ9b"
+      }
+    },
+    "updatedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "3PQZJGf2hHPIsjfpoCuJ9b"
+      }
+    },
+    "publishedCounter": 2,
+    "version": 4,
+    "publishedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "3PQZJGf2hHPIsjfpoCuJ9b"
+      }
+    }
+  }
+}
+
+2) Once you've made your blog post(s) in Contentful, you will need a "Space Id" and "access token" 
+in order to retrieve your data. Go to the APIs tab and click Add Api Key.
+
+
+
+

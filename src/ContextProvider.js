@@ -207,9 +207,13 @@ export {Context, ContextProvider}
 //     any further ".then()" clauses of the "fetch()" are completed
 //     program run ends.
 
-//  The reason for this sequence of events can be found in here https://www.udemy.com/course/understand-javascript/ 
+//  The reason for this sequence of events is related to the asynchronous nature of the JavaScript "fetch" API.
+//  useful information can be found in here https://www.udemy.com/course/understand-javascript/  
 //  (video name "What About Asynchronous Callbacks"), which you have written up here 
 //  https://github.com/peter-lancaster/work-storage/blob/master/20200410%20JavaScript%20Understanding%20the%20Weird%20Parts
+//  
+//  To get a deeper understanding, you'll also need to read this 
+//  https://levelup.gitconnected.com/javascript-and-asynchronous-magic-bee537edc2da (including the two responses)
 
 // Here is the relevant bit from your write-up: 
 
@@ -232,32 +236,36 @@ export {Context, ContextProvider}
     // and will be actioned when (AND ONLY WHEN) everything in the Execution Stack (including the Global Execution Context) 
     // has been executed (and the Execution Stack is empty).
 
-//  Applying this information to the case where we DO use "fetch()" within "funcOne" to get the data to pass to "funcTwo" as 
-//  a parameter, gives us the following understanding: 
+//  Putting this information together with what we find in this blog 
+//  https://levelup.gitconnected.com/javascript-and-asynchronous-magic-bee537edc2da
+//  .. we can fild the following step-by-step of what occurs in the case where we DO use "fetch()" within "funcOne" to get 
+//  the data to pass to "funcTwo" : 
 
 
 //     useEffect calls our function --> this function goes to the top of the execution stack
 //     useEffect calls funcOne --> funcOne now goes to the top of the execution stack, with the useEffect function beneath it
 //     funcOne is called 
-//     funcOne calls the "fetch()" method --> this is added to the event queue for when Execution Stack is complete.
+//     funcOne calls the "fetch()" method --> this is added to the event queue, to be executed when the Execution Stack is complete.
 //     funcOne runs to it's end. --> funcOne pops off the execution stack (useEffect function is now top of the stack)
 //     useEffect completes it's run --> execution stack is now empty
 //
 //     NOW THAT EXECUTION STACK IS EMPTY, THE JAVASCRIPT ENGINE EXAMINES THE EVENT QUEUE AND FINDS A FETCH() JOB WAITING THERE
 //
-//     "fetch()" job has a context added to the execution stack --> this is the only item currently in the execution stack
+//     "fetch()" job now has a context added to the execution stack --> this is the only item currently in the execution stack
 //     response is received from "fetch()"
-//     funcTwo is called --> funcTwo now goes to the top of the execution stack, with the fetch() job beneath it
-//     at the point in funcTwo where state is changed --> ContextProvider goes to the top of the execution stack!!! WHY!?!
+//     funcTwo is called --> funcTwo now goes to the top of the execution stack, with the fetch() chain beneath it
+//     at the point in funcTwo where state is changed --> ContextProvider GOES TO THE TOP OF THE EXECUTION STACK AND IS 
+//     EXECUTED IMMEDIATELY, I THINK THAT THIS IS BECAUSE 
+
+//     "Non-async callback functions are placed at the top of the execution stack not into the Event queue when they 
+//     are called within a function. 
+//     (from comments on this blog https://levelup.gitconnected.com/javascript-and-asynchronous-magic-bee537edc2da)
+
 //     ContextProvider component (and rest of render tree) run to completion --> ContextProvider popped off the execution stack
 //     funcTwo is picked up where it left off and runs to it's end.
 //     any further ".then()" clauses of the "fetch()" are completed
 //     program run ends.
-
-// https://codeburst.io/master-the-asynchronous-state-in-a-functional-react-component-60a0899cffca
-
-
-// https://levelup.gitconnected.com/javascript-and-asynchronous-magic-bee537edc2da
+// 
 
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -97,7 +97,6 @@ function ContextProvider({children}) {
 
         processedArray = newArray.map(element => {return element})
         
-        debugger
         console.log("middle of funcTwo")
         setPosts(processedArray)
 
@@ -254,12 +253,26 @@ export {Context, ContextProvider}
 //     "fetch()" job now has a context added to the execution stack --> this is the only item currently in the execution stack
 //     response is received from "fetch()"
 //     funcTwo is called --> funcTwo now goes to the top of the execution stack, with the fetch() chain beneath it
-//     at the point in funcTwo where state is changed --> ContextProvider GOES TO THE TOP OF THE EXECUTION STACK AND IS 
-//     EXECUTED IMMEDIATELY, I THINK THAT THIS IS BECAUSE 
+//     
+//     !!!! At the point in funcTwo where state is changed --> ContextProvider GOES TO THE TOP OF THE EXECUTION STACK AND IS 
+//     EXECUTED IMMEDIATELY, I THINK THAT THIS IS BECAUSE !!!! : 
 
 //     "Non-async callback functions are placed at the top of the execution stack not into the Event queue when they 
-//     are called within a function. 
-//     (from comments on this blog https://levelup.gitconnected.com/javascript-and-asynchronous-magic-bee537edc2da)
+//     are called within a function." (from comments on this blog 
+//      https://levelup.gitconnected.com/javascript-and-asynchronous-magic-bee537edc2da)
+
+//     Assuming that I'm correct in thinking that this behaviour / sequencing is related to async vs non-async functions, 
+//     another way to think of this would be to say that: "Async functions in the Execution Stack (that originally
+//     had to wait in the Event Queue before reaching the Execution Stack) take lower priority than any non-async functions
+//     invoked within them. So in this example, we have: 
+
+//                 fetch() (called by funcOne) is an async function
+//                 funcTwo is invoked within the fetch() within funcOne
+//                 funcTwo changes state, which triggers a rerender, WHICH IMMEDIATELY GOES TO THE TOP OF THE EXECUTION
+//                 STACK BECAUSE IT'S NOT AN ASYNC FUNCTION
+//                 rerender occurs
+//                 after rerender it's popped off the stack, and we return to "fetch" processing (as this is now top of
+//                 stack again)     
 
 //     ContextProvider component (and rest of render tree) run to completion --> ContextProvider popped off the execution stack
 //     funcTwo is picked up where it left off and runs to it's end.
